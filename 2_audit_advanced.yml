@@ -1,0 +1,41 @@
+---
+- name: Check if devices match the Gold config
+  hosts: csrs
+  gather_facts: no
+
+  tasks:
+  - name: Check gold config status
+    when: ansible_network_os == 'ios'
+    ios_config:
+      lines:
+        - clock timezone PST -8 0
+        - clock summer-time PDT recurring
+        - service timestamps debug datetime msec localtime show-timezone
+        - service timestamps log datetime msec localtime show-timezone
+        - ip domain name mylab.com
+        - netconf-yang
+        - restconf
+        - spanning-tree extend system-id
+        - ip http server
+        - ip http authentication local
+        - ip http secure-server
+        - ip ssh version 2
+        - ntp server 8.8.8.8
+      #backup: yes
+
+  - name: Configure VTY and console
+    when: ansible_network_os == 'ios'
+    loop: 
+      - line vty 0 15
+      - line con
+    ios_config:
+      lines:
+        - exec-timeout 0 0
+      parents: "{{ item }}"
+
+  - name: Set NTP
+    when: ansible_network_os == 'ios'
+    loop: "{{ ntp_servers }}"
+    ios_config:
+      lines:
+        - ntp server {{ item }}
