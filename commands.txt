@@ -1,0 +1,3 @@
+genie learn config routing --testbed-file lab1.yaml --output tests/out1
+genie diff tests/normal tests/out1 --output diff1
+

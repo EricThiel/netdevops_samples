@@ -1,0 +1,12 @@
+[all:vars]
+ansible_python_interpreter="/usr/bin/env python"
+
+[localhost]
+127.0.0.1 
+
+[csrs]
+10.253.65.11 username=cisco password=C1sco12345
+10.253.65.12 username=cisco password=C1sco12345
+10.253.65.13 username=cisco password=C1sco12345
+10.253.65.14 username=cisco password=C1sco12345
+

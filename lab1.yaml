@@ -1,0 +1,96 @@
+testbed:
+  name: dmz_rtr1
+
+devices:
+  
+  csr11:
+    alias: csr11
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip: 10.253.65.11
+        port: 22
+    tacacs:
+      username: cisco
+    passwords:
+      tacacs: C1sco12345
+      line: C1sco12345
+      enable: C1sco12345
+
+    custom:
+      abstraction:
+        order: [os, type]
+
+  csr12:
+    alias: csr12
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip: 10.253.65.12
+        port: 22
+    tacacs:
+      username: cisco
+    passwords:
+      tacacs: C1sco12345
+      line: C1sco12345
+      enable: C1sco12345
+
+    custom:
+      abstraction:
+        order: [os, type]
+
+  csr13:
+    alias: csr13
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip: 10.253.65.13
+        port: 22
+    tacacs:
+      username: cisco
+    passwords:
+      tacacs: C1sco12345
+      line: C1sco12345
+      enable: C1sco12345
+
+    custom:
+      abstraction:
+        order: [os, type]
+
+  csr14:
+    alias: csr14
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip: 10.253.65.14
+        port: 22
+    tacacs:
+      username: cisco
+    passwords:
+      tacacs: C1sco12345
+      line: C1sco12345
+      enable: C1sco12345
+
+    custom:
+      abstraction:
+        order: [os, type]
