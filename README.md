@@ -8,7 +8,7 @@ We'll explain all the details as the demo goes on, but let's get setup to run th
 1. Clone down the code from GitHub and change into the directory for this demo. 
 
 	```bash
-	git clone https://github.com/securenetwrk/netdevops_samples
+	git clone https://github.com/EricThiel/netdevops_samples
 	cd netdevops_samples
 	```
 
